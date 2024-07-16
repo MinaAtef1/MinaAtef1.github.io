@@ -70,7 +70,7 @@ jobs:
       
       - name: create directory dist/django-snippets
         run: mkdir -p ${{ env.BLOG_PATH }}/dist/django-snippets
-        working-directory: ${{ env.BLOG_PATH }}
+        working-directory: ${{ env.MAIN_PATH }}
 
       - name: Move django-snippets/dist to dist/about
         run: mv ${{ env.DJANGO_SNIPPETS_PATH }}/dist/* ${{ env.BLOG_PATH }}/dist/django-snippets
