@@ -1,0 +1,8 @@
+[submodule "django-snippets"]
+	path = django-snippets
+	url = https://github.com/MinaAtef1/django-snippets
+	branch = main  
+[submodule "blog"]
+	path = blog
+	url = https://github.com/MinaAtef1/blog
+ 	branch = main  
