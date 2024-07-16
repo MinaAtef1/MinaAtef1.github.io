@@ -25,6 +25,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
+  MAIN_PATH: "." # default value when not using subfolders
   BLOG_PATH: "./blog" # default value when not using subfolders
   DJANGO_SNIPPETS_PATH: "./django-snippets" # default value when not using subfolders
 
@@ -73,6 +74,7 @@ jobs:
 
       - name: Move django-snippets/dist to dist/about
         run: mv ${{ env.DJANGO_SNIPPETS_PATH }}/dist/* ${{ env.BLOG_PATH }}/dist/django-snippets
+        working-directory: ${{ env.MAIN_PATH }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
