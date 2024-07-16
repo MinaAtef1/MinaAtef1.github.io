@@ -37,12 +37,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.SITES_DEPLOY_TOKEN }}
-        
+          submodules: recursive
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: npm
+          cache-dependency-path: ${{ env.BLOG_PATH }}/package-lock.json
 
       - name: Install Main dependencies
         run: npm ci
